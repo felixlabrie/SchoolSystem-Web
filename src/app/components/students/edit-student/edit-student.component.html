@@ -1,0 +1,30 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit Student</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="updateStudent()">
+                <div class="mb-3">
+                    <label for="studentId" class="form-label">Student ID</label>
+                    <input type="text" class="form-control" id="studentId" readonly name = "studentId" [(ngModel)] = "studentDetails.studentId">
+                </div>
+                <div class="mb-3">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="firstName" name = "firstName" [(ngModel)] = "studentDetails.firstName">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name = "lastName" [(ngModel)] = "studentDetails.lastName">
+                </div>
+                <div class="mb-3">
+                    <label for="courseNb" class="form-label">Number of Courses</label>
+                    <input type="text" class="form-control" id="courseNb" name = "courseNb" [(ngModel)] = "studentDetails.courseNb">
+                </div>
+                <div class="mb-3">
+                    <label for="gradDate" class="form-label">Graduation Date</label>
+                    <input type="date" class="form-control" id="gradDate" name = "gradDate" [(ngModel)] = "studentDetails.gradDate">
+                </div>
+                <button type="submit" class="btn btn-primary mr-5">Save</button>
+                <button type="button" class="btn btn-danger" (click) = "deleteStudent(studentDetails.id)">Delete</button>
+              </form>
+        </div>
+    </div>
